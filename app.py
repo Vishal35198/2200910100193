@@ -14,15 +14,12 @@ logging.basicConfig(
 
 app = Flask(__name__)
 
-# Replace with your actual log API endpoint
+
 LOG_API_URL = "http://20.244.56.144/evaluation-service/logs"
 
-# Add your authorization token for the logging API here
-# You should get this token from your log API provider
 LOG_API_TOKEN = "YOUR_API_KEY_HERE"
 
-# In-memory storage for shortened URLs
-# This is now updated to include click statistics
+
 shortened_urls = {}
 
 # --- Logging Function ---
@@ -93,7 +90,7 @@ def create_short_url():
     """
     data = request.get_json()
 
-    # Log an error if the 'url' field is missing
+
     if 'url' not in data:
         log_to_api("backend", "error", "shorturls", "Missing 'url' field in request body.")
         return jsonify({"error": "Missing 'url' field"}), 400
@@ -103,7 +100,7 @@ def create_short_url():
     custom_shortcode = data.get('shortcode')
 
     if custom_shortcode:
-        # Check if custom shortcode is alphanumeric and unique
+
         if not custom_shortcode.isalnum() or custom_shortcode in shortened_urls:
             log_to_api("backend", "error", "shorturls", f"Invalid or duplicate custom shortcode: {custom_shortcode}")
             return jsonify({"error": "Invalid or duplicate custom shortcode"}), 409
@@ -114,16 +111,15 @@ def create_short_url():
     # Calculate expiry time
     expiry_time = datetime.utcnow() + timedelta(minutes=validity_minutes)
 
-    # Store the URL and metadata
     shortened_urls[shortcode] = {
         "long_url": long_url,
         "expiry_timestamp": expiry_time.isoformat() + "Z", # Add 'Z' for UTC
         "creation_timestamp": datetime.utcnow().isoformat() + "Z",
         "clicks": 0,
-        "click_data": [] # Store detailed click data here
+        "click_data": [] 
     }
 
-    # Log the successful creation
+
     log_to_api("backend", "info", "shorturls", f"New short URL created for {long_url}")
 
     # Construct the response
@@ -140,16 +136,16 @@ def login():
     """
     data = request.get_json()
     if not data or 'username' not in data or 'password' not in data:
-        # This is where the error logging to the API occurs
+
         log_to_api("backend", "error", "login", "Failed login attempt: missing username or password")
         return jsonify({"message": "Invalid login credentials"}), 401
     
-    # Simulate a successful login
+
     username = data['username']
     log_to_api("backend", "info", "login", f"Successful login for user: {username}")
     return jsonify({"message": "Login successful"}), 200
 
-# Endpoint to handle redirection and log clicks
+
 @app.route("/<shortcode>")
 def redirect_to_long_url(shortcode):
     """
@@ -162,10 +158,10 @@ def redirect_to_long_url(shortcode):
             log_to_api("backend", "warning", "redirect", f"Expired shortcode accessed: {shortcode}")
             return "This short URL has expired.", 410
 
-        # Update click statistics
+
         url_data["clicks"] += 1
 
-        # Collect and store click data
+
         click_info = {
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "referrer": request.referrer if request.referrer else "unknown",
@@ -179,7 +175,7 @@ def redirect_to_long_url(shortcode):
         log_to_api("backend", "error", "redirect", f"Shortcode not found: {shortcode}")
         return "Short URL not found.", 404
 
-# New endpoint for retrieving URL statistics
+
 @app.route("/shorturls/<shortcode>", methods=["GET"])
 def get_url_statistics(shortcode):
     """
