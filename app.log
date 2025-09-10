@@ -104,3 +104,5 @@
 2025-09-10 14:40:50,727 - INFO - 127.0.0.1 - - [10/Sep/2025 14:40:50] "[33mGET /shorturls/myurl123 HTTP/1.1[0m" 404 -
 2025-09-10 14:48:11,996 - INFO -  * Detected change in 'C:\\Users\\visha\\anaconda3\\Scripts\\conda-script.py', reloading
 2025-09-10 14:48:12,515 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:48:13,177 - WARNING -  * Debugger is active!
+2025-09-10 14:48:13,180 - INFO -  * Debugger PIN: 767-621-154
