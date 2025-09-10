@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-lg bg-white rounded-xl shadow-lg p-8 space-y-6">
+        <h1 class="text-3xl font-bold text-center text-gray-900">URL Shortener</h1>
+        <form id="shortenerForm" class="space-y-4">
+            <div>
+                <label for="url" class="block text-sm font-medium text-gray-700">Long URL</label>
+                <input type="url" id="url" name="url" required class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out" placeholder="e.g., https://example.com/very-long-url">
+            </div>
+            <div>
+                <label for="validity" class="block text-sm font-medium text-gray-700">Validity (minutes, optional)</label>
+                <input type="number" id="validity" name="validity" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out" placeholder="Default: 30 minutes">
+            </div>
+            <div>
+                <label for="shortcode" class="block text-sm font-medium text-gray-700">Custom Shortcode (optional)</label>
+                <input type="text" id="shortcode" name="shortcode" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out" placeholder="e.g., myurl123">
+            </div>
+            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                Create Short URL
+            </button>
+        </form>
+
+        <div id="resultArea" class="mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg hidden">
+            <p class="text-sm font-medium text-gray-700">Your short URL is:</p>
+            <a id="shortlinkOutput" href="#" class="text-indigo-600 hover:underline font-bold text-lg break-words"></a>
+            <p id="expiryOutput" class="text-sm text-gray-500 mt-1"></p>
+        </div>
+        <p class="text-center text-sm text-gray-600">
+            Already have an account? <a href="/" class="font-medium text-indigo-600 hover:text-indigo-500">Go to the Login Page</a>
+        </p>
+    </div>
+
+    <script>
+        const shortenerForm = document.getElementById('shortenerForm');
+        const resultArea = document.getElementById('resultArea');
+        const shortlinkOutput = document.getElementById('shortlinkOutput');
+        const expiryOutput = document.getElementById('expiryOutput');
+
+        shortenerForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            resultArea.textContent = 'Generating URL...';
+            resultArea.classList.remove('hidden');
+            resultArea.classList.add('bg-gray-50', 'text-gray-500', 'p-4');
+
+            const url = document.getElementById('url').value;
+            const validity = document.getElementById('validity').value;
+            const shortcode = document.getElementById('shortcode').value;
+
+            const payload = { url: url };
+            if (validity) payload.validity = parseInt(validity);
+            if (shortcode) payload.shortcode = shortcode;
+
+            try {
+                const response = await fetch('/shorturls', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    shortlinkOutput.href = result.shortlink;
+                    shortlinkOutput.textContent = result.shortlink;
+                    expiryOutput.textContent = `Expires: ${new Date(result.expiry).toLocaleString()}`;
+
+                    resultArea.classList.remove('bg-gray-50', 'text-gray-500');
+                    resultArea.classList.add('p-4', 'bg-green-100', 'border-green-400');
+                } else {
+                    resultArea.innerHTML = `<p class="text-red-600 font-semibold">Error: ${result.error || 'Could not create short URL'}</p>`;
+                    resultArea.classList.remove('bg-gray-50', 'text-gray-500');
+                    resultArea.classList.add('bg-red-100', 'border-red-400');
+                }
+
+            } catch (error) {
+                console.error('Network error:', error);
+                resultArea.innerHTML = `<p class="text-red-600 font-semibold">Could not connect to the server.</p>`;
+                resultArea.classList.remove('bg-gray-50', 'text-gray-500');
+                resultArea.classList.add('bg-red-100', 'border-red-400');
+            }
+        });
+    </script>
+</body>
+</html>

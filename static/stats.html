@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Statistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-8 space-y-6">
+        <h1 class="text-3xl font-bold text-center text-gray-900">Short URL Statistics</h1>
+        
+        <form id="statsForm" class="space-y-4">
+            <div>
+                <label for="shortcode" class="block text-sm font-medium text-gray-700">Enter Shortcode</label>
+                <input type="text" id="shortcode" name="shortcode" required class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out" placeholder="e.g., abcD12">
+            </div>
+            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                Get Statistics
+            </button>
+        </form>
+
+        <div id="statsResults" class="mt-4 hidden">
+            <!-- Results will be displayed here -->
+        </div>
+
+        <p class="text-center text-sm text-gray-600">
+            <a href="/" class="font-medium text-indigo-600 hover:text-indigo-500">Go to the Login Page</a> | 
+            <a href="/shorten" class="font-medium text-indigo-600 hover:text-indigo-500">Go to the URL Shortener</a>
+        </p>
+    </div>
+
+    <script>
+        const statsForm = document.getElementById('statsForm');
+        const statsResults = document.getElementById('statsResults');
+
+        statsForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            statsResults.innerHTML = '<p class="text-center text-gray-500">Fetching statistics...</p>';
+            statsResults.classList.remove('hidden');
+
+            const shortcode = document.getElementById('shortcode').value;
+
+            try {
+                const response = await fetch(`/shorturls/${shortcode}`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    displayStats(data);
+                } else {
+                    statsResults.innerHTML = `<div class="p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"><p class="font-bold">Error:</p><p>${data.error || 'Could not find statistics for that shortcode.'}</p></div>`;
+                }
+
+            } catch (error) {
+                console.error('Network error:', error);
+                statsResults.innerHTML = `<div class="p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"><p class="font-bold">Network Error:</p><p>Could not connect to the server.</p></div>`;
+            }
+        });
+
+        function displayStats(data) {
+            let html = `
+                <div class="p-4 bg-gray-50 border border-gray-200 rounded-lg space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Statistics for "${data.shortcode}"</h2>
+                    <p><strong>Original URL:</strong> <a href="${data.original_url}" class="text-indigo-600 hover:underline break-words">${data.original_url}</a></p>
+                    <p><strong>Total Clicks:</strong> <span class="font-bold text-indigo-600">${data.total_clicks}</span></p>
+                    <p><strong>Created On:</strong> ${new Date(data.creation_date).toLocaleString()}</p>
+                    <p><strong>Expires On:</strong> ${new Date(data.expiry_date).toLocaleString()}</p>
+                    
+                    <h3 class="text-lg font-semibold text-gray-800">Click History</h3>
+            `;
+
+            if (data.click_data.length > 0) {
+                html += `
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Timestamp</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Referrer</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                `;
+                data.click_data.forEach(click => {
+                    html += `
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${new Date(click.timestamp).toLocaleString()}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${click.referrer}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${click.geolocation}</td>
+                        </tr>
+                    `;
+                });
+                html += `
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } else {
+                html += `<p class="text-sm text-gray-500">No click data available yet.</p>`;
+            }
+
+            html += `</div>`;
+            statsResults.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

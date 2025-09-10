@@ -1,0 +1,106 @@
+2025-09-10 14:15:26,525 - WARNING -  * Debugger is active!
+2025-09-10 14:15:26,529 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:15:55,913 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:15:55,915 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:15:57,284 - WARNING -  * Debugger is active!
+2025-09-10 14:15:57,288 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:16:20,489 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-10 14:16:20,489 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-10 14:16:20,504 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:16:21,091 - WARNING -  * Debugger is active!
+2025-09-10 14:16:21,094 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:17:05,908 - INFO -  * Detected change in 'C:\\Users\\visha\\anaconda3\\Lib\\site-packages\\flask\\app.py', reloading
+2025-09-10 14:17:05,923 - INFO - 127.0.0.1 - - [10/Sep/2025 14:17:05] "[35m[1mPOST /shorturls HTTP/1.1[0m" 500 -
+2025-09-10 14:17:06,294 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:17:06,906 - WARNING -  * Debugger is active!
+2025-09-10 14:17:06,909 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:17:37,981 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:17:37,982 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:17:39,019 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:17:39,657 - WARNING -  * Debugger is active!
+2025-09-10 14:17:39,660 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:17:56,489 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:17:56,490 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:17:56,747 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:17:57,379 - WARNING -  * Debugger is active!
+2025-09-10 14:17:57,382 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:17:57,752 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:17:57,753 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:17:57,753 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:17:58,452 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:17:59,044 - WARNING -  * Debugger is active!
+2025-09-10 14:17:59,047 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:19:09,691 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-10 14:19:09,691 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-10 14:19:09,710 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:19:10,321 - WARNING -  * Debugger is active!
+2025-09-10 14:19:10,325 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:19:20,753 - INFO - 127.0.0.1 - - [10/Sep/2025 14:19:20] "[35m[1mPOST /shorturls HTTP/1.1[0m" 500 -
+2025-09-10 14:20:08,386 - INFO -  * Detected change in 'E:\\project\\app.py', reloading
+2025-09-10 14:20:08,723 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:20:09,871 - WARNING -  * Debugger is active!
+2025-09-10 14:20:09,881 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:20:21,239 - INFO -  * Detected change in 'E:\\project\\app.py', reloading
+2025-09-10 14:20:21,240 - INFO -  * Detected change in 'E:\\project\\app.py', reloading
+2025-09-10 14:20:21,976 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:20:22,535 - WARNING -  * Debugger is active!
+2025-09-10 14:20:22,537 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:20:28,878 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-10 14:20:28,878 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-10 14:20:28,889 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:20:29,448 - WARNING -  * Debugger is active!
+2025-09-10 14:20:29,451 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:20:37,701 - ERROR - Logging failed due to network error: HTTPSConnectionPool(host='your-log-api-endpoint.com', port=443): Max retries exceeded with url: /log (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026EB8B5CF50>: Failed to resolve 'your-log-api-endpoint.com' ([Errno 11001] getaddrinfo failed)"))
+2025-09-10 14:20:37,702 - INFO - 127.0.0.1 - - [10/Sep/2025 14:20:37] "[35m[1mPOST /shorturls HTTP/1.1[0m" 201 -
+2025-09-10 14:23:46,854 - INFO - Serving URL statistics page.
+2025-09-10 14:23:47,018 - INFO - 127.0.0.1 - - [10/Sep/2025 14:23:47] "GET /stats HTTP/1.1" 200 -
+2025-09-10 14:23:47,585 - ERROR - Logging failed due to network error: HTTPSConnectionPool(host='your-log-api-endpoint.com', port=443): Max retries exceeded with url: /log (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026EBC562C10>: Failed to resolve 'your-log-api-endpoint.com' ([Errno 11001] getaddrinfo failed)"))
+2025-09-10 14:23:47,587 - INFO - 127.0.0.1 - - [10/Sep/2025 14:23:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-10 14:23:53,365 - ERROR - Logging failed due to network error: HTTPSConnectionPool(host='your-log-api-endpoint.com', port=443): Max retries exceeded with url: /log (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026EBC59CC50>: Failed to resolve 'your-log-api-endpoint.com' ([Errno 11001] getaddrinfo failed)"))
+2025-09-10 14:23:53,367 - INFO - 127.0.0.1 - - [10/Sep/2025 14:23:53] "GET /shorturls/myurl123 HTTP/1.1" 200 -
+2025-09-10 14:24:01,895 - ERROR - Logging failed due to network error: HTTPSConnectionPool(host='your-log-api-endpoint.com', port=443): Max retries exceeded with url: /log (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026EBC94C6D0>: Failed to resolve 'your-log-api-endpoint.com' ([Errno 11001] getaddrinfo failed)"))
+2025-09-10 14:24:01,897 - INFO - 127.0.0.1 - - [10/Sep/2025 14:24:01] "[32mGET /myurl123 HTTP/1.1[0m" 302 -
+2025-09-10 14:24:05,526 - INFO - Serving URL statistics page.
+2025-09-10 14:24:05,528 - INFO - 127.0.0.1 - - [10/Sep/2025 14:24:05] "[36mGET /stats HTTP/1.1[0m" 304 -
+2025-09-10 14:24:07,798 - ERROR - Logging failed due to network error: HTTPSConnectionPool(host='your-log-api-endpoint.com', port=443): Max retries exceeded with url: /log (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000026EBC59D990>: Failed to resolve 'your-log-api-endpoint.com' ([Errno 11001] getaddrinfo failed)"))
+2025-09-10 14:24:07,799 - INFO - 127.0.0.1 - - [10/Sep/2025 14:24:07] "GET /shorturls/myurl123 HTTP/1.1" 200 -
+2025-09-10 14:35:00,022 - INFO - Serving login page.
+2025-09-10 14:35:00,042 - INFO - 127.0.0.1 - - [10/Sep/2025 14:35:00] "GET / HTTP/1.1" 200 -
+2025-09-10 14:35:00,124 - INFO - 127.0.0.1 - - [10/Sep/2025 14:35:00] "[33mGET /[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com) HTTP/1.1[0m" 404 -
+2025-09-10 14:35:36,792 - INFO - Serving URL shortener page.
+2025-09-10 14:35:36,794 - INFO - 127.0.0.1 - - [10/Sep/2025 14:35:36] "GET /shorten HTTP/1.1" 200 -
+2025-09-10 14:39:06,838 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:39:06,845 - INFO -  * Detected change in 'E:\\project\\logging_middleware\\logging_middleware.py', reloading
+2025-09-10 14:39:07,862 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:39:08,649 - WARNING -  * Debugger is active!
+2025-09-10 14:39:08,657 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:39:12,393 - INFO -  * Detected change in 'E:\\project\\app.py', reloading
+2025-09-10 14:39:12,739 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:39:13,429 - WARNING -  * Debugger is active!
+2025-09-10 14:39:13,432 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:39:48,557 - INFO -  * Detected change in 'E:\\project\\app.py', reloading
+2025-09-10 14:39:49,582 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:39:50,336 - WARNING -  * Debugger is active!
+2025-09-10 14:39:50,339 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:40:03,280 - INFO - Serving URL statistics page.
+2025-09-10 14:40:03,330 - INFO - 127.0.0.1 - - [10/Sep/2025 14:40:03] "[36mGET /stats HTTP/1.1[0m" 304 -
+2025-09-10 14:40:05,782 - INFO - 127.0.0.1 - - [10/Sep/2025 14:40:05] "[35m[1mGET /shorturls/myurl123 HTTP/1.1[0m" 500 -
+2025-09-10 14:40:32,779 - INFO -  * Detected change in 'E:\\project\\app.py', reloading
+2025-09-10 14:40:33,485 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:40:34,088 - WARNING -  * Debugger is active!
+2025-09-10 14:40:34,092 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:40:39,719 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-10 14:40:39,719 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-10 14:40:39,727 - INFO -  * Restarting with watchdog (windowsapi)
+2025-09-10 14:40:40,303 - WARNING -  * Debugger is active!
+2025-09-10 14:40:40,306 - INFO -  * Debugger PIN: 767-621-154
+2025-09-10 14:40:48,440 - INFO - Serving URL statistics page.
+2025-09-10 14:40:48,480 - INFO - 127.0.0.1 - - [10/Sep/2025 14:40:48] "[36mGET /stats HTTP/1.1[0m" 304 -
+2025-09-10 14:40:50,727 - WARNING - Failed to log to API: 401 - {"message":"invalid authorization token"}
+2025-09-10 14:40:50,727 - INFO - 127.0.0.1 - - [10/Sep/2025 14:40:50] "[33mGET /shorturls/myurl123 HTTP/1.1[0m" 404 -
+2025-09-10 14:48:11,996 - INFO -  * Detected change in 'C:\\Users\\visha\\anaconda3\\Scripts\\conda-script.py', reloading
+2025-09-10 14:48:12,515 - INFO -  * Restarting with watchdog (windowsapi)
